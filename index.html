@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusDesk — Ambient Pomodoro Workspace</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">FocusDesk</div>
+      <div class="stats-pill">Completed today: <strong id="sessionCount">0</strong></div>
+    </header>
+
+    <section class="timer-card">
+      <div class="mode-tabs" role="tablist">
+        <button class="tab active" data-mode="focus">Focus (25m)</button>
+        <button class="tab" data-mode="short">Short Break (5m)</button>
+        <button class="tab" data-mode="long">Long Break (15m)</button>
+      </div>
+
+      <div class="clock-display" id="clockDisplay">25:00</div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+      <div class="actions">
+        <button class="btn primary" id="toggleBtn">Start Focus</button>
+        <button class="btn ghost" id="resetBtn">Reset</button>
+        <button class="btn ghost" id="noiseBtn">Ambient Noise: Off</button>
+      </div>
+      <p class="hint">Shortcuts: <kbd>Space</kbd> Start/Pause &middot; <kbd>R</kbd> Reset</p>
+    </section>
+
+    <section class="tasks-card">
+      <h2>Session Task Queue</h2>
+      <form id="taskForm" class="task-form">
+        <input id="taskInput" type="text" placeholder="What are you working on next?" required />
+        <button class="btn primary" type="submit">Add</button>
+      </form>
+      <ul id="taskList" class="task-list"></ul>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
